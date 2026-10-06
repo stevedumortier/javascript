@@ -48,9 +48,11 @@ switch (stock) {
     console.log(`uitverkocht`);
 }
 
-/----TERNARY OPERATOR----/;
+/----TERNARY OPERATOR----/
 const mijnstock = 0;
 
-// const status1 = voorraad > 0 ? "Op voorraad" : "Uitverkocht";
+const status1 = voorraad > 0 ? "Op voorraad" : "Uitverkocht";
 
-// const status2 = if(voorraad > 0) {console.log(`op voorraad`)}else{ console.log(`uitverkocht`)};
+const status2 = if(voorraad > 0) {
+  console.log(`op voorraad`)}
+  else{ console.log(`uitverkocht`)};
