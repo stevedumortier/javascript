@@ -438,24 +438,274 @@
 
 //26.
 
-const namen = [
-  "Huisblend",
-  "Ethiopia Sidamo",
-  "Colombia Supremo",
-  "Brazil Santos",
-  "KenyaAA",
-];
-const prijzen = [24.5, 32.0, 27.9, 22.0, 29.95];
-let duurstePrijs = 0;
-let duursteIndex = 0;
-let goedkoopsteIndex = 100;
-for (let i = 0; i < namen.length; i++) {
-  if (prijzen[i] > duurstePrijs) {
-    duursteIndex = i;
-    duurstePrijs = prijzen[i];
+// const namen = [
+//   "Huisblend",
+//   "Ethiopia Sidamo",
+//   "Colombia Supremo",
+//   "Brazil Santos",
+//   "KenyaAA",
+// ];
+// const prijzen = [24.5, 32.0, 27.9, 22.0, 29.95];
+// let duursteIndex = 0;
+// let goedkoopsteIndex = 0;
+// for (let i = 0; i < namen.length; i++) {
+//   if (prijzen[i] > prijzen[duursteIndex]) {
+//     duursteIndex = i;
+//     console.log(i);
+//   } else if (prijzen[i] < prijzen[goedkoopsteIndex]) {
+//     goedkoopsteIndex = i;
+//     console.log(i);
+//   }
+// }
+// console.log(
+//   `Duurste: ${namen[duursteIndex]} (${prijzen[duursteIndex]}) Goedkoopste: ${namen[goedkoopsteIndex]} (${prijzen[goedkoopsteIndex]} Verschil: ${prijzen[duursteIndex] - prijzen[goedkoopsteIndex]}`,
+// );
+
+//27:
+
+// const bestellingen = [
+//   "abonnee",
+//   "nieuw",
+//   "vaste klant",
+//   "abonnee",
+//   "onbekend",
+//   "abonnee",
+// ];
+// const bedrag = 30;
+// let korting;
+// let totaal = 0;
+// let abonnees = 0;
+// for (let i = 0; i < bestellingen.length; i++) {
+//   switch (bestellingen[i]) {
+//     case "abonnee":
+//       korting = 0.15;
+//       abonnees++;
+//      break;
+//     case "vaste klant":
+//       korting = 0.1;
+//       break;
+//     case "nieuw":
+//       korting = 0.05;
+//       break;
+//     default:
+//       korting = 0;
+//   }
+//   totaal += bedrag - bedrag * korting;
+//   console.log(`${bestellingen[i]}: ${bedrag - bedrag * korting}`);
+// }
+// console.log(`Aantal abonnees: ${abonnees} Omzet vandaag: ${totaal}`);
+
+//28.
+
+// let budget = 20;
+// const prijs = 2.5;
+// let aantalKoffies = 0;
+// while (budget >= prijs) {
+//   if (aantalKoffies % 5 == 0) {
+//     console.log(`Koffie ${aantalKoffies}: gratis!`);
+//     aantalKoffies++;
+//   } else {
+//     budget -= prijs;
+//     console.log(`Koffie ${aantalKoffies}: betaald, nog ${budget} over`);
+//     aantalKoffies++;
+//   }
+// }
+// console.log(`Totaal: ${aantalKoffies} Budget over: ${budget}`);
+
+//29.
+
+// const soorten = ["Espresso", "Cappuccino", "Latte"];
+// const basisprijzen = [2.2, 3.0, 3.4];
+// const formaten = ["S", "M", "L"];
+// let prijs = 0;
+
+// for (let i = 0; i < soorten.length; i++) {
+//   for (let y = 0; y < formaten.length; y++) {
+//     if (soorten[i] == soorten[0] && formaten[y] == formaten[2]) {
+//       console.log("Espresso L: niet beschikbaar");
+//     } else {
+//       switch (formaten[y]) {
+//         case "S":
+//           prijs = basisprijzen[i];
+//           break;
+//         case "M":
+//           prijs = basisprijzen[i] + 0.5;
+//           break;
+//         case "L":
+//           prijs = basisprijzen[i] + 1;
+//           break;
+//       }
+//       console.log(`${soorten[i]} ${formaten[y]}: ${prijs}`);
+//       console.log(`-----------------------------------`);
+//     }
+//   }
+// }
+
+//30.
+
+// const producten = [
+//   "Huisblend",
+//   "Ethiopia Sidamo",
+//   "Colombia Supremo",
+//   "Kenya AA",
+// ];
+// const prijzen = [24.5, 32.0, 27.9, 29.95];
+// const aantallen = [2, 0, 1, 3]; // wat de klant wil kopen
+// const voorraad = [10, 5, 1, 2]; // wat er in de winkel ligt
+// const klanttype = "vaste klant";
+
+// let subtotaal = 0;
+// let totaal = 0;
+// let korting = 0;
+// let verzendkosten = 0;
+
+// console.log(`ROAST & CO. – KASSATICKET`);
+// console.log(`---------------------------`);
+
+// for (let i = 0; i < producten.length; i++) {
+//   if (aantallen[i] != 0) {
+//     if (aantallen[i] > voorraad[i]) {
+//       console.log(
+//         `Let op: slechts ${voorraad[i]} x ${producten[i]} beschikbaar`,
+//       );
+//       console.log(
+//         `${voorraad[i]} x ${producten[i]}  à ${prijzen[i]} = ${prijzen[i] * voorraad[i]} `,
+//       );
+//       subtotaal += prijzen[i] * voorraad[i];
+//     } else {
+//       console.log(
+//         `${aantallen[i]} x ${producten[i]}  à ${prijzen[i]} = ${prijzen[i] * aantallen[i]} `,
+//       );
+//       subtotaal += prijzen[i] * aantallen[i];
+//     }
+//   }
+// }
+// switch (klanttype) {
+//   case "abonnee":
+//     korting = 0.15;
+//     totaal = subtotaal - subtotaal * korting;
+
+//     break;
+//   case "vaste klant":
+//     korting = 0.1;
+//     totaal = subtotaal - subtotaal * korting;
+//     break;
+//   case "nieuw":
+//     korting = 0.05;
+//     totaal = subtotaal - subtotaal * korting;
+//     break;
+//   default:
+//     korting = 0;
+//     totaal = subtotaal - subtotaal * korting;
+// }
+// if (totaal >= 50) {
+//   verzendkosten = 0;
+// } else {
+//   verzendkosten = 4.95;
+// }
+// console.log(
+//   `Subtotaal: ${subtotaal} Korting: ${korting * 100}% Verzendkosten: ${verzendkosten} Totaal: ${totaal} BTW: ${totaal - totaal / 1.21}`,
+// );
+
+//Extra 1.
+
+// const hoogte = 9;
+// const bekers = 11;
+// let bekersNodig = 0;
+// let bekersOver = bekers;
+// let rijenToren = 0;
+
+// for (let i = 1; i <= hoogte; i++) {
+//   if (i < hoogte) {
+//     console.log(`  `.repeat(hoogte - i) + `[_] `.repeat(i));
+//   } else {
+//     console.log(`[_] `.repeat(i));
+//   }
+//   bekersNodig += i;
+// }
+// console.log(`Een toren van ${hoogte} rijen heeft ${bekersNodig} bekers nodig.`);
+// for (let i = 1; i <= bekersOver; i++) {
+//   bekersOver -= i;
+//   rijenToren++;
+// }
+// const woordBeker = bekersOver == 1 ? "beker" : "bekers";
+// const woordBlijft = bekersOver == 1 ? "blijft" : "blijven";
+// console.log(
+//   `Met ${bekers} bekers bouw je een toren van ${rijenToren} rijen hoog.`,
+// );
+// console.log(`Er ${woordBlijft} ${bekersOver} ${woordBeker} over.`);
+
+//Extra 2.
+
+// const aantalBestellingen = 1000;
+// const bestelNummer = [];
+// let regel = "";
+// let verschil = 0;
+// let grootsteVerschil = 0;
+// let verschilStart = 0;
+// let verschilEinde = 0;
+
+// for (let i = 2; i <= aantalBestellingen; i++) {
+//   let isPrime = true;
+//   for (let y = 2; y < i; y++) {
+//     if (i % y === 0) {
+//       isPrime = false;
+//       break;
+//     }
+//   }
+//   if (isPrime) {
+//     bestelNummer.push(i);
+//   }
+// }
+
+// for (let i = 0; i < bestelNummer.length; i++) {
+//   // Zet het getal om naar tekst en vul links aan met spaties tot 4 tekens
+//   regel += String(bestelNummer[i]).padStart(4, " ");
+
+//   if ((i + 1) % 10 === 0) {
+//     console.log(regel);
+//     regel = "";
+//   }
+// }
+
+// if (regel !== "") {
+//   console.log(regel);
+// }
+// console.log(
+//   `${bestelNummer.length} van de ${aantalBestellingen} klanten krijgen een koekje.`,
+// );
+
+// for (let i = 1; i < bestelNummer.length; i++) {
+//   verschil = bestelNummer[i] - bestelNummer[i - 1];
+//   if (verschil > grootsteVerschil) {
+//     grootsteVerschil = verschil;
+//     verschilStart = bestelNummer[i - 1];
+//     verschilEinde = bestelNummer[i];
+//   }
+// }
+// console.log(
+//   `Grootste afstand: ${grootsteVerschil}(tussen ${verschilStart} en ${verschilEinde})`,
+// );
+
+//Extra 3.
+
+const teBetalen = 11.56;
+const betaald = 50;
+let wisselgeld = betaald - teBetalen;
+let hoeveelheid = [];
+const biljetten = [50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01];
+//Biljetten: € 50, € 20, € 10 en € 5. Munten: € 2, € 1, € 0.50, € 0.20, € 0.10, € 0.05, € 0.02 en € 0.01.
+
+console.log(`Te betalen: €${teBetalen}`);
+console.log(`Betaald: €${betaald}`);
+console.log(`wisselgeld: €${wisselgeld}`);
+console.log(`---------------------------`);
+
+while (wisselgeld > 0) {
+  for (let i = 0; i < biljetten.length; i++) {
+    hoeveelheid.push(Math.floor(wisselgeld / biljetten[i]));
+    wisselgeld = wisselgeld - hoeveelheid[i] * biljetten[i];
+    console.log(wisselgeld);
   }
-  console.log(duursteIndex);
-  // else if (prijzen[i] < goedkoopsteIndex) {
-  //   goedkoopsteIndex = i;
-  // }
 }
+console.log(hoeveelheid);
