@@ -701,11 +701,12 @@ console.log(`Betaald: €${betaald}`);
 console.log(`wisselgeld: €${wisselgeld}`);
 console.log(`---------------------------`);
 
+wisselgeld.round(100);
 while (wisselgeld > 0) {
   for (let i = 0; i < biljetten.length; i++) {
     hoeveelheid.push(Math.floor(wisselgeld / biljetten[i]));
     wisselgeld = wisselgeld - hoeveelheid[i] * biljetten[i];
-    console.log(wisselgeld);
+    console.log(wisselgeld.toFixed(2));
   }
 }
 console.log(hoeveelheid);
