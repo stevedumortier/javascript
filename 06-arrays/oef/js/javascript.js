@@ -286,10 +286,10 @@
 
 // 30.
 
-const leeg = [];
+// const leeg = [];
 
-const totaal = leeg.reduce((totaal, nr) => totaal + nr, 0);
-console.log(totaal);
+// const totaal = leeg.reduce((totaal, nr) => totaal + nr, 0);
+// console.log(totaal);
 // zonder de ,0 als beginwaarde heeft hij niks om het nieuwe nr mee op te tellen
 
 //--Extra--
@@ -313,3 +313,30 @@ console.log(totaal);
 // const som = prijzen.filter((a) => a > 30).reduce((a, b) => a + b, 0);
 
 // console.log(som);
+
+//--Uitbreidingsoefeningen--
+
+//01
+
+const leerlingen = [
+  { naam: "Amira", punten: [14, 16, 12, 18] },
+  { naam: "Bram", punten: [8, 11, 9, 12] },
+  { naam: "Chloé", punten: [17, 19, 18, 16] },
+  { naam: "Dries", punten: [10, 7, 13, 6] },
+  { naam: "Elif", punten: [12, 14, 15, 11] },
+]; //
+
+// Loop over elke leerling
+leerlingen.forEach((leerling) => {
+  // OPDRACHT 1: Bereken het gemiddelde
+  // Tel eerst alle punten uit leerling.punten op met reduce
+  let totaal = leerling.punten.reduce((acc, huidigPunt) => acc + huidigPunt, 0);
+
+  // Bereken daarna het gemiddelde door te delen door het aantal punten
+  let gemiddelde = totaal / leerling.punten.length;
+
+  // Hint: Om af te ronden op 1 cijfer na de komma kun je .toFixed(1) gebruiken[cite: 1]
+
+  // OPDRACHT 2: Tel het aantal tekorten
+  // Maak hierna een nieuwe variabele en gebruik leerling.punten.filter(...) om punten < 10 te vinden[cite: 1]
+});
